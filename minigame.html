@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Game for pie</title>
+    <link rel="stylesheet" href="mmstyles.css">
+    <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+
+    <audio id="background-music">
+        <source src="love.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <div class="header">
+        <h1>pie & ikko</h1>
+        <div class="nav">
+            <button onclick="navigateTo('index.html')">Home <span>&#10084;</span></button>
+            <button onclick="navigateTo('messages.html')">Messages <span>&#128140;</span></button>
+            <button onclick="navigateTo('gallery.html')">Gallery <span>&#128151;</span></button>
+            <button onclick="navigateTo('minigame.html')">Mini Game <span>&#127872;</span></button>
+        </div>
+        <div class="music-toggle">
+            <input type="checkbox" id="musicSwitch" onchange="toggleMusic()" checked>
+            <label for="musicSwitch" class="switch">
+                <span class="on">🎵</span>
+                <span class="off">🔇</span>
+            </label>
+        </div>
+    </div>
+
+
+    <div class="game-container">
+        <h2>ROCK PAPER AND SCISSOR NA SELFISH</h2><BR><BR>
+        <h2>Choose your move:</h2>
+        <div class="buttons">
+            <button class="choice" onclick="playGame('rock')">Rock</button>
+            <button class="choice" onclick="playGame('paper')">Paper</button>
+            <button class="choice" onclick="playGame('scissors')">Scissors</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <!-- Modal Structure for Winning Message -->
+    <div id="winningModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>You Won!</h2>
+            <p>Will you be with me for a lifetime? ❤️</p>
+            <button id="yesButton" onclick="yesClicked()">Yes</button>
+            <button id="noButton" onclick="moveNoButton()">No</button>
+        </div>
+    </div>
+
+    <!-- Modal for Final Message -->
+    <div id="finalModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeFinalModal()">&times;</span>
+            <h2>OKAY, BE MINE AGAIN I LOVE YOU SO MUCH!</h2>
+            <h2>MISS NA KITA! KAUSAPIN MO NA AKO ULIT!</h2>
+        </div>
+    </div>
+
+    <script src="mmscript.js"></script>
+
+</body>
+</html>

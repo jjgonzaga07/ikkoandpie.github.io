@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery with pie</title>
+    <link rel="stylesheet" href="gstyles.css">
+    <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+
+    <audio id="background-music" loop autoplay>
+        <source src="love.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <div class="header">
+        <h1>pie & ikko</h1>
+        <div class="nav">
+            <button onclick="navigateTo('index.html')">Home <span>&#10084;</span></button>
+            <button onclick="navigateTo('messages.html')">Messages <span>&#128140;</span></button>
+            <button onclick="navigateTo('gallery.html')">Gallery <span>&#128151;</span></button>
+            <button onclick="navigateTo('minigame.html')">Mini Game <span>&#127872;</span></button>
+        </div>
+        <div class="music-toggle">
+            <input type="checkbox" id="musicSwitch" onchange="toggleMusic()" checked>
+            <label for="musicSwitch" class="switch">
+                <span class="on">🎵</span>
+                <span class="off">🔇</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="images/image3.jpg" alt="Gallery Image 3">
+            <button class="gallery-button" onclick="openModal('images/image3.jpg', 'We so cute here argh, i wanna kiss u nung time na to tbh')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image4.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image4.jpg', 'this smile, i miss this :<<<')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image5.jpg" alt="Gallery Image 5">
+            <button class="gallery-button" onclick="openModal('images/image5.jpg', 'nung time na ahas muna pinakiss q kase nahihiya aq ikiss ka T^T')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image6.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image6.jpg', 'my fave pic, me n u eye to eye!')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image7.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image7.jpg', 'never gonna forget this pic since u post this and ilang beses ko binasa caption mo here :>')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image8.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image8.jpg', 'i miss your hands')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image10.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image10.jpg', 'grrr hopefully meron pa sa future!')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image11.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image11.jpg', 'imma wait for the time na we gonna go to photobooth ng di nakacosplay :>>>')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image12.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image12.jpg', 'ill treasure this.')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image16.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image16.jpg', 'cute mo hereeeeeeeeeeee, ure the cutest baby')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image17.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image17.jpg', 'i wanna post this but grrrr iloveyou')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image18.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image18.jpg', 'wait teka kinikilig ako T^T')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image13.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image13.jpg', 'argh sobra na kitang miss, please sobrang bango mo palagi')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image1.jpg" alt="Gallery Image 1">
+            <button class="gallery-button" onclick="openModal('images/image1.jpg', 'our best pic sa shoot! love this so much :>>>')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image2.jpg" alt="Gallery Image 2">
+            <button class="gallery-button" onclick="openModal('images/image2.jpg', 'pic tayo send ko lang kay mama, HAHAHAHAH KINILIG AKO RON')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image9.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image9.jpg', 'sabog na me here huhu pero ganda mo sobra')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image15.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image15.jpg', 'PLEASE LOOK AT ME, URE SO BEAUTIFUL')">View</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/image14.jpg" alt="Gallery Image 4">
+            <button class="gallery-button" onclick="openModal('images/image14.jpg', 'eto na yung time na never na us nagkaron ng maayos na picture because u dont want it na')">View</button>
+        </div>
+    </div>
+    
+
+<!-- Modal Structure -->
+<div id="imageModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-inner">
+            <img id="modalImage" src="" alt="Large Image">
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+</div>
+
+
+    <script src="gscript.js"></script>
+
+</body>
+</html>
